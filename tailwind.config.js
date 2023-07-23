@@ -5,6 +5,7 @@ module.exports = {
     colors: {
       // Configure your color palette here
       green: "#14C8AB",
+      lightgreen: "#EDFBF9",
       white: "#FFFFFF",
       gray: "#F8F8F8",
       primaryText: "#9C9C9C",
