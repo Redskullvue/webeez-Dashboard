@@ -15,20 +15,22 @@
       {{ properties.title }}
     </div>
   </div>
-  <div v-if="properties.subItems">
-    <ul class="flex items-center flex-col">
-      <router-link
+  <div v-if="properties.subItems" class="mt-4 mr-10">
+    <ul class="flex items-start flex-col gap-4 text-right">
+      <li
         v-for="subItem in properties.subItems"
-        :to="subItem.path"
         :class="
           this.$route.path === subItem.path
             ? 'text-green font-bold list-disc '
             : 'text-primaryText'
         "
         :key="subItem"
+        class="p-1"
       >
-        <p class="text-xs">{{ subItem.name }}</p>
-      </router-link>
+        <router-link :to="subItem.path">
+          <p class="text-xs">{{ subItem.name }}</p>
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>
