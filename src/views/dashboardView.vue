@@ -4,7 +4,7 @@
     <div class="w-2/12 h-screen">
       <side-bar />
     </div>
-    <div><router-view /></div>
+    <div class="w-10/12"><router-view /></div>
   </div>
 </template>
 

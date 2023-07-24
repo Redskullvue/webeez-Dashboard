@@ -57,7 +57,9 @@
         </defs>
       </svg>
     </div>
-    <div class="flex flex-col items-center gap-6 mt-4 w-10/12">
+    <div
+      class="flex flex-col items-center gap-6 mt-4 w-10/12 animate__animated animate__slideInRight"
+    >
       <router-link
         v-for="btn in buttons"
         :key="btn.path"
