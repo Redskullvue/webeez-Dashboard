@@ -18,10 +18,10 @@
       :class="
         this.$route.path === properties.path ? 'text-green font-bold' : ''
       "
-      class="flex items-start justify-between transition-all duration-300"
+      class="flex items-center justify-between transition-all duration-300"
     >
       {{ properties.title }}
-      <div v-if="properties.subItems">
+      <div v-if="properties.subItems" class="flex items-center">
         <span
           class="material-symbols-outlined transition-all duration-300"
           :class="toggle === true ? 'rotate-180' : 'rotate-0'"
