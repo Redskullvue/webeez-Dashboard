@@ -11,4 +11,8 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+* {
+  font-family: Vazirmatn, sans-serif;
+}
+</style>
