@@ -10,7 +10,9 @@
     </div>
     <div class="w-full px-6 py-2 flex justify-around gap-4">
       <!-- Box1 -->
-      <div class="flex flex-col justify-between flex-auto">
+      <div
+        class="flex flex-col justify-between flex-auto animate__animated animate__fadeIn transition-all duration-150"
+      >
         <div
           class="flex-auto h-48 bg-white overflow-auto rounded-lg shadow-lg"
         ></div>
@@ -22,7 +24,9 @@
         ></div>
       </div>
       <!-- Box2 -->
-      <div class="flex flex-col justify-between flex-1">
+      <div
+        class="flex flex-col justify-between flex-1 animate__animated animate__fadeIn transition-all duration-200 delay-200"
+      >
         <div
           class="flex-1 h-48 bg-white px-3 py-6 rounded-lg flex flex-col shadow-lg"
         >
@@ -56,7 +60,9 @@
       </div>
 
       <!-- Box3 -->
-      <div class="flex flex-col justify-between flex-1">
+      <div
+        class="flex flex-col justify-between flex-1 animate__animated animate__fadeIn transition-all duration-300 delay-300"
+      >
         <div
           class="flex-1 h-48 bg-white px-3 py-6 rounded-lg flex flex-col shadow-lg"
         >
@@ -89,7 +95,9 @@
         </div>
       </div>
       <!-- Box4 -->
-      <div class="flex-1 bg-white rounded-lg shadow-xl px-3 py-6 flex flex-col">
+      <div
+        class="flex-1 bg-white rounded-lg shadow-xl px-3 py-6 flex flex-col animate__animated animate__fadeIn transition-all duration-150 delay-600"
+      >
         <div>
           <h1 class="text-primaryText">فروش ماهانه</h1>
           <span
@@ -112,7 +120,9 @@
           >
             <h4>طراحی سایت</h4>
             <h4>
-              <span class="material-symbols-outlined text-sm text-green">
+              <span
+                class="material-symbols-outlined text-sm text-green cursor-pointer"
+              >
                 edit
               </span>
             </h4>
@@ -126,7 +136,30 @@
         </div>
       </div>
     </div>
-    <div class="w-full h-full bg-green">2nd</div>
+    <div
+      class="w-full h-full bg-white shadow-xl p-4 rounded-lg flex flex-col overflow-hidden flex-1"
+    >
+      <div class="text-primaryText flex">
+        <h1>کاربران آنلاین</h1>
+        <span
+          class="material-symbols-outlined text-5xl text-green opacity-20 absolute mr-4 -mt-3"
+        >
+          online_prediction
+        </span>
+      </div>
+      <div class="w-full flex flex-col gap-2 overflow-y-scroll">
+        <div
+          v-for="i in 10"
+          :key="i"
+          class="w-full flex justify-around mt-4 p-1"
+        >
+          <div>محمد منوچهری</div>
+          <div>00:20:01</div>
+          <div>سبد خرید</div>
+          <div class="text-green">اطلاعات کاریر</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

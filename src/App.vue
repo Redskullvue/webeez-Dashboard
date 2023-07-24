@@ -15,4 +15,22 @@ export default {
 * {
   font-family: Vazirmatn, sans-serif;
 }
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: gray;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #14c8ab;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #109b84;
+}
 </style>
