@@ -17,18 +17,22 @@
       class="w-full h-5/6 flex flex-col items-center bg-white rounded-lg shadow-lg overflow-y-scroll"
     >
       <div
-        @click="isSelected = !isSelected"
+        @click="product.isSelected = !product.isSelected"
         class="w-full flex justify-around items-center p-3"
         v-for="product in products"
         :key="products[product]"
       >
-        <div v-if="!isSelected">
-          <span class="material-symbols-outlined text-primaryText">
+        <div v-if="!product.isSelected">
+          <span
+            class="material-symbols-outlined text-primaryText cursor-pointer"
+          >
             check_box_outline_blank
           </span>
         </div>
-        <div v-if="isSelected">
-          <span class="material-symbols-outlined text-primaryText">
+        <div v-if="product.isSelected">
+          <span
+            class="material-symbols-outlined text-primaryText cursor-pointer"
+          >
             check_box
           </span>
         </div>
@@ -71,6 +75,7 @@ export default {
           price: 120000,
           isOff: true,
           isPublished: true,
+          isSelected: false,
         },
         {
           name: "پکیج طراحی سایت ",
@@ -78,6 +83,7 @@ export default {
           price: 240000,
           isOff: true,
           isPublished: false,
+          isSelected: false,
         },
         {
           name: "پکیج طراحی سایت ",
@@ -85,6 +91,7 @@ export default {
           price: 520000,
           isOff: false,
           isPublished: true,
+          isSelected: false,
         },
         {
           name: "پکیج طراحی سایت ",
@@ -92,6 +99,7 @@ export default {
           price: 105000,
           isOff: true,
           isPublished: true,
+          isSelected: false,
         },
         {
           name: "پکیج طراحی سایت ",
@@ -99,6 +107,7 @@ export default {
           price: 430000,
           isOff: false,
           isPublished: false,
+          isSelected: false,
         },
         {
           name: "پکیج طراحی سایت ",
@@ -106,9 +115,9 @@ export default {
           price: 120000,
           isOff: true,
           isPublished: true,
+          isSelected: false,
         },
       ],
-      isSelected: false,
     };
   },
 };
