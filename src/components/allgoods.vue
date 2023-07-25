@@ -17,25 +17,40 @@
       class="w-full h-5/6 flex flex-col items-center bg-white rounded-lg shadow-lg overflow-y-scroll"
     >
       <div
+        @click="isSelected = !isSelected"
         class="w-full flex justify-around items-center p-3"
-        v-for="i in 10"
-        :key="i"
+        v-for="product in products"
+        :key="products[product]"
       >
-        <div>
+        <div v-if="!isSelected">
           <span class="material-symbols-outlined text-primaryText">
             check_box_outline_blank
           </span>
         </div>
-        <div>پکیج طراحی</div>
-        <div>طراحی وب</div>
+        <div v-if="isSelected">
+          <span class="material-symbols-outlined text-primaryText">
+            check_box
+          </span>
+        </div>
+        <div>{{ product.name }}</div>
+        <div>{{ product.category }}</div>
         <div>
-          <small class="text-xs text-green mt-8 mx-1">تومان</small>120.000
+          <small class="text-xs text-green mt-8 mx-1">تومان</small
+          >{{ product.price }}
         </div>
         <div>
-          <span class="material-symbols-outlined ml-8 text-red"> sell </span>
+          <span
+            class="material-symbols-outlined ml-8"
+            :class="product.isOff === true ? 'text-green' : 'text-red'"
+          >
+            sell
+          </span>
         </div>
         <div>
-          <span class="material-symbols-outlined ml-4 text-green">
+          <span
+            class="material-symbols-outlined ml-4"
+            :class="product.isPublished === true ? 'text-green' : 'text-red'"
+          >
             check_circle
           </span>
         </div>
@@ -47,5 +62,54 @@
 <script>
 export default {
   name: "allGoods",
+  data() {
+    return {
+      products: [
+        {
+          name: "پکیج طراحی سایت ",
+          category: "طراحی سایت",
+          price: 120000,
+          isOff: true,
+          isPublished: true,
+        },
+        {
+          name: "پکیج طراحی سایت ",
+          category: "طراحی سایت",
+          price: 240000,
+          isOff: true,
+          isPublished: false,
+        },
+        {
+          name: "پکیج طراحی سایت ",
+          category: "طراحی سایت",
+          price: 520000,
+          isOff: false,
+          isPublished: true,
+        },
+        {
+          name: "پکیج طراحی سایت ",
+          category: "طراحی سایت",
+          price: 105000,
+          isOff: true,
+          isPublished: true,
+        },
+        {
+          name: "پکیج طراحی سایت ",
+          category: "طراحی سایت",
+          price: 430000,
+          isOff: false,
+          isPublished: false,
+        },
+        {
+          name: "پکیج طراحی سایت ",
+          category: "طراحی سایت",
+          price: 120000,
+          isOff: true,
+          isPublished: true,
+        },
+      ],
+      isSelected: false,
+    };
+  },
 };
 </script>
