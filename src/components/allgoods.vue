@@ -4,8 +4,19 @@
     <div
       class="flex bg-white w-full p-3 items-center justify-around shadow-lg rounded-lg text-primaryText"
     >
-      <div>
-        <span class="material-symbols-outlined"> check_box_outline_blank </span>
+      <div @click="selectAllProducts" v-if="!selectAll">
+        <span
+          class="material-symbols-outlined cursor-pointer animate__animated animate__jello"
+        >
+          check_box_outline_blank
+        </span>
+      </div>
+      <div @click="selectAllProducts" v-if="selectAll">
+        <span
+          class="material-symbols-outlined text-green cursor-pointer animate__animated animate__jello"
+        >
+          check_box
+        </span>
       </div>
       <div>نام محصول</div>
       <div>دسته بندی</div>
@@ -24,14 +35,14 @@
       >
         <div v-if="!product.isSelected">
           <span
-            class="material-symbols-outlined text-primaryText cursor-pointer"
+            class="material-symbols-outlined text-primaryText cursor-pointer animate__animated animate__jello"
           >
             check_box_outline_blank
           </span>
         </div>
         <div v-if="product.isSelected">
           <span
-            class="material-symbols-outlined text-primaryText cursor-pointer"
+            class="material-symbols-outlined text-green transition-all cursor-pointer animate__animated animate__jello"
           >
             check_box
           </span>
@@ -118,7 +129,16 @@ export default {
           isSelected: false,
         },
       ],
+      selectAll: false,
     };
+  },
+  methods: {
+    selectAllProducts() {
+      this.selectAll = !this.selectAll;
+      this.products.forEach((product) => {
+        product.isSelected = !product.isSelected;
+      });
+    },
   },
 };
 </script>
