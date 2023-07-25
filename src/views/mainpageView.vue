@@ -3,7 +3,7 @@
     <div class="w-full mb-4">
       <h1 class="font-bold text-2xl text-titleText mr-4">داشبورد</h1>
       <span
-        class="material-symbols-outlined opacity-20 text-green text-5xl font-bold absolute top-6 right-72"
+        class="material-symbols-outlined opacity-20 text-green text-5xl font-bold absolute top-6 mr-8"
       >
         space_dashboard
       </span>
