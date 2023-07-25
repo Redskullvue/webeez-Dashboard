@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full p-10">
-    <h1 class="text-titleText mb-4">سلام کاربر !</h1>
+    <h1 class="text-titleText mb-4 font-bold text-xl">سلام کاربر !</h1>
     <h4 class="text-sm text-primaryText">به بخش ووکامرس سایتت خوش اومدی</h4>
     <p class="mt-10 text-sm text-primaryText">
       تو اینجا میتونی تقریا تمام کارای اصلی رو انجام بدی مثل :
