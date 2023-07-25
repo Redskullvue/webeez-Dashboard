@@ -19,6 +19,10 @@
       <router-link to="/woo/goods/id" class="cursor-pointer text-green text-xs">
         ویرایش محصولای قبلی</router-link
       >
+      ,
+      <router-link to="/woo/goods" class="cursor-pointer text-green text-xs">
+        دیدن همه محصولات</router-link
+      >
     </p>
     <p class="text-primaryText text-sm">
       بخش ووکامرس بخش فروشگاهی سایته که از طریق امکاناتی که داره میشه محصولات
