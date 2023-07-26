@@ -14,6 +14,8 @@ module.exports = {
       yellow: "#FF9800;",
       blue: "#1976D2",
       purple: "#5564E8",
+      hovergreen: "#33B9CD",
+      border: "#7C7878",
     },
   },
   plugins: [],

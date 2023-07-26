@@ -21,7 +21,7 @@ export default {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: gray;
+  background: white;
 }
 
 /* Handle */
