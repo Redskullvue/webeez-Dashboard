@@ -56,7 +56,7 @@
         <div>
           <span
             class="material-symbols-outlined ml-8"
-            :class="product.isOff === true ? 'text-green' : 'text-red'"
+            :class="product.isOff === true ? 'text-purple' : 'text-primaryText'"
           >
             sell
           </span>
