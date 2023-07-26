@@ -135,9 +135,17 @@ export default {
   methods: {
     selectAllProducts() {
       this.selectAll = !this.selectAll;
-      this.products.forEach((product) => {
-        product.isSelected = !product.isSelected;
-      });
+      if (this.selectAll === true) {
+        this.products.forEach((product) => {
+          product.isSelected = true;
+        });
+      }
+
+      if (this.selectAll === false) {
+        this.products.forEach((product) => {
+          product.isSelected = false;
+        });
+      }
     },
   },
 };
