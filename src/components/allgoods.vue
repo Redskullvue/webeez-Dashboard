@@ -1,5 +1,13 @@
 <template>
-  <div class="w-10/12 h-5/6 p-4 flex flex-col justify-between">
+  <div class="w-10/12 h-5/6 p-4 flex flex-col justify-start gap-4">
+    <div class="w-full -mt-4">
+      <h1 class="font-bold text-2xl text-titleText mr-4">ووکامرس</h1>
+      <span
+        class="material-symbols-outlined opacity-20 text-green text-5xl font-bold absolute top-10 mr-8"
+      >
+        credit_card
+      </span>
+    </div>
     <!-- NavBar Of All Gooods -->
     <div
       class="flex bg-white w-full p-3 items-center justify-around shadow-lg rounded-lg text-primaryText"
@@ -51,7 +59,7 @@
         <div>{{ product.category }}</div>
         <div>
           <small class="text-xs text-green mt-8 mx-1">تومان</small
-          >{{ product.price }}
+          >{{ numberSeperator(product.price) }}
         </div>
         <div>
           <span
@@ -83,7 +91,7 @@ export default {
         {
           name: "پکیج طراحی سایت ",
           category: "طراحی سایت",
-          price: 120000,
+          price: 1200000,
           isOff: true,
           isPublished: true,
           isSelected: false,
@@ -91,7 +99,7 @@ export default {
         {
           name: "پکیج طراحی سایت ",
           category: "طراحی سایت",
-          price: 240000,
+          price: 2400000,
           isOff: true,
           isPublished: false,
           isSelected: false,
@@ -99,7 +107,7 @@ export default {
         {
           name: "پکیج طراحی سایت ",
           category: "طراحی سایت",
-          price: 520000,
+          price: 5200000,
           isOff: false,
           isPublished: true,
           isSelected: false,
@@ -107,7 +115,7 @@ export default {
         {
           name: "پکیج طراحی سایت ",
           category: "طراحی سایت",
-          price: 105000,
+          price: 1050000,
           isOff: true,
           isPublished: true,
           isSelected: false,
@@ -115,7 +123,7 @@ export default {
         {
           name: "پکیج طراحی سایت ",
           category: "طراحی سایت",
-          price: 430000,
+          price: 4300000,
           isOff: false,
           isPublished: false,
           isSelected: false,
@@ -123,7 +131,7 @@ export default {
         {
           name: "پکیج طراحی سایت ",
           category: "طراحی سایت",
-          price: 120000,
+          price: 1200000,
           isOff: true,
           isPublished: true,
           isSelected: false,
@@ -146,6 +154,10 @@ export default {
           product.isSelected = false;
         });
       }
+    },
+    numberSeperator(number) {
+      let stringNum = number.toLocaleString("en");
+      return stringNum;
     },
   },
 };

@@ -129,7 +129,7 @@
             <h4>1.200.000</h4>
           </div>
           <button
-            class="w-full bg-green px-2 py-4 rounded-xl shadow-md text-white"
+            class="w-full bg-green px-2 py-4 rounded-xl shadow-md text-white hover:bg-hovergreen transition-all duration-300"
           >
             مشاهده حساب کاربری
           </button>
