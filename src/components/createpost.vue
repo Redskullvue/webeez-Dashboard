@@ -118,16 +118,21 @@
       <div class="w-full h-full" v-if="currentLevel === 2">
         <create-post-level2 />
       </div>
+      <div class="w-full h-full px-8" v-if="currentLevel === 3">
+        <create-post-level3 />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import createPostLevel2 from "@/components/createpostlevel2.vue";
+import createPostLevel3 from "@/components/createpostlevel3.vue";
 export default {
   name: "createPost",
   components: {
     createPostLevel2,
+    createPostLevel3,
   },
   data() {
     return {

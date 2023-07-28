@@ -1,8 +1,11 @@
 <template>
   <div
-    class="w-32 h-32 bg-white shadow-lg rounded-lg flex items-center justify-center cursor-pointer flex-1"
+    class="w-32 h-32 bg-white shadow-lg rounded-lg flex items-center justify-center cursor-pointer"
   >
-    <img :src="require(`../assets/${src}.png`)" />
+    <img
+      class="w-full h-full object-cover rounded-lg"
+      :src="require(`../assets/${src}.jpeg`)"
+    />
   </div>
 </template>
 
