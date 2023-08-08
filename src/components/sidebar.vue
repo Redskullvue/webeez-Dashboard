@@ -116,11 +116,6 @@ export default {
           path: "/admins",
         },
         {
-          title: "وبلاگ",
-          icon: "rss_feed",
-          path: "/blog",
-        },
-        {
           title: "تنظیمات",
           icon: "settings",
           path: "/setting",
