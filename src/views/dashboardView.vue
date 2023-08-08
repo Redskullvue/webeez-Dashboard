@@ -1,5 +1,15 @@
 <template>
-  <div dir="rtl" class="w-screen h-screen flex bg-gray overflow-hidden">
+  <div
+    class="w-full h-screen z-10 flex items-center justify-center"
+    v-if="isLoading"
+  >
+    <y-loading />
+  </div>
+  <div
+    v-if="!isLoading"
+    dir="rtl"
+    class="w-screen h-screen flex bg-gray overflow-hidden"
+  >
     <!-- Side Bar -->
     <div
       v-if="this.$route.path != '/login'"
@@ -20,19 +30,24 @@
 // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
 import sideBar from "@/components/sidebar.vue";
+import YLoading from "@/components/loading.vue";
 export default {
   name: "dashView",
   components: {
-    // HelloWorld,
     sideBar,
+    YLoading,
   },
   data() {
     return {
       isAuthed: true,
+      isLoading: true,
     };
   },
   mounted() {
     this.goToDashboard();
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 5000);
   },
   methods: {
     goToDashboard() {
