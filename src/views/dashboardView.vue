@@ -1,10 +1,18 @@
 <template>
   <div dir="rtl" class="w-screen h-screen flex bg-gray overflow-hidden">
     <!-- Side Bar -->
-    <div class="w-2/12 h-screen">
+    <div
+      v-if="this.$route.path != '/login'"
+      class="w-2/12 h-screen overflow-y-scroll"
+    >
       <side-bar />
     </div>
-    <div class="w-10/12"><router-view /></div>
+    <div
+      class="w-10/12"
+      :class="this.$route.path === '/login' ? 'w-full' : 'w-10/12'"
+    >
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -17,6 +25,23 @@ export default {
   components: {
     // HelloWorld,
     sideBar,
+  },
+  data() {
+    return {
+      isAuthed: true,
+    };
+  },
+  mounted() {
+    this.goToDashboard();
+  },
+  methods: {
+    goToDashboard() {
+      if (this.isAuthed) {
+        this.$router.push("/");
+      } else {
+        this.$router.push("/login");
+      }
+    },
   },
 };
 </script>

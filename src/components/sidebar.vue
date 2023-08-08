@@ -100,6 +100,17 @@ export default {
           ],
         },
         {
+          title: "محتوی",
+          icon: "menu_book",
+          path: "/mohtava",
+          subItems: [
+            { name: "درباره ما", path: "/mohtava/about" },
+            { name: "ارتباط با ما", path: "/mohtava/contact" },
+            { name: "تیتر اصلی", path: "/mohtava/mainTitle" },
+            { name: "پست جدید", path: "/mohtava/new" },
+          ],
+        },
+        {
           title: "کاربران",
           icon: "group",
           path: "/admins",
