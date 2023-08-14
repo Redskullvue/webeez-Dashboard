@@ -106,7 +106,7 @@ export default {
           subItems: [
             { name: "درباره ما", path: "/mohtava/about" },
             { name: "ارتباط با ما", path: "/mohtava/contact" },
-            { name: "تیتر اصلی", path: "/mohtava/mainTitle" },
+            { name: "همه پست ها", path: "/mohtava/posts" },
             { name: "پست جدید", path: "/mohtava/new" },
           ],
         },

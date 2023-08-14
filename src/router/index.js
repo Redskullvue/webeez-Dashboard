@@ -6,6 +6,7 @@ import createPostView from "../views/createpostView.vue";
 import adminsView from "../views/adminsView.vue";
 import LoginView from "../views/loginView.vue";
 import contentView from "@/views/contentView";
+import postsView from "@/views/postsView.vue";
 const routes = [
   {
     path: "/",
@@ -41,6 +42,11 @@ const routes = [
     path: "/mohtava",
     name: "contentView",
     component: contentView,
+  },
+  {
+    path: "/mohtava/posts",
+    name: "postsView",
+    component: postsView,
   },
 ];
 
