@@ -23,11 +23,7 @@ const routes = [
     name: "allgoodsView",
     component: allgoodsView,
   },
-  {
-    path: "/woo/createpost",
-    name: "createPostView",
-    component: createPostView,
-  },
+
   {
     path: "/admins",
     name: "adminsView",
@@ -37,6 +33,11 @@ const routes = [
     path: "/login",
     name: "LoginView",
     component: LoginView,
+  },
+  {
+    path: "/mohtava/new",
+    name: "createPostView",
+    component: createPostView,
   },
   {
     path: "/mohtava",

@@ -2,12 +2,12 @@
   <div class="w-10/12 h-5/6 p-4 flex flex-col justify-start gap-6">
     <div
       v-if="showDeleteModal"
-      class="w-48 h-16 bg-green text-white flex items-center justify-center rounded-lg absolute bottom-0"
+      class="w-48 h-16 bg-green text-white flex items-center justify-center rounded-tr-lg rounded-br-lg absolute top-2 left-0 animate__animated animate__lightSpeedInLeft"
     >
       پست مورد نظر پاک شد
     </div>
     <div class="w-full -mt-4">
-      <h1 class="font-bold text-2xl text-titleText mr-4">کاربران</h1>
+      <h1 class="font-bold text-2xl text-titleText mr-4">همه پست ها</h1>
       <span
         class="material-symbols-outlined opacity-20 text-green text-5xl font-bold absolute top-10 mr-8"
       >
@@ -33,10 +33,10 @@
         </span>
       </div>
       <div>نام</div>
-      <div>نام خانوادگی</div>
-      <div>تاریخ ثبت نام</div>
-      <div>ایمیل</div>
-      <div>شماره تماس</div>
+      <div>دسته بندی</div>
+      <div>تاریخ اتنشار</div>
+      <div>خلاصه</div>
+      <div>کاور</div>
       <div></div>
     </div>
     <div
@@ -74,7 +74,7 @@
         </div>
         <div class="flex-1 text-titleText">{{ post.created }}</div>
         <div class="flex-1 text-titleText">{{ post.content }}</div>
-        <div class="flex-1 text-titleText font-bold">09121111111</div>
+        <img class="flex-1 text-titleText w-24 h-24" :src="`/${post.image}`" />
         <div class="flex items-center">
           <div>
             <span class="material-symbols-outlined text-green"> star </span>
