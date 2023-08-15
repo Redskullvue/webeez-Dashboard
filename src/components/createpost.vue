@@ -69,7 +69,7 @@ export default {
       formData.append("title", this.newPost.title);
       formData.append("category", this.newPost.category);
       formData.append("content", this.newPost.content);
-      await axios.post("http://localhost:3000/api/post", formData);
+      await axios.post("https://webeez.iran.liara.run/api/post", formData);
       this.$router.push("/mohtava/posts");
     },
   },
