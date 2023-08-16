@@ -7,7 +7,7 @@
       پست مورد نظر پاک شد
     </div>
     <div class="w-full -mt-4">
-      <h1 class="font-bold text-2xl text-titleText mr-4">همه پست ها</h1>
+      <h1 class="font-bold text-2xl text-titleText mr-4">پست ها</h1>
       <span
         class="material-symbols-outlined opacity-20 text-green text-5xl font-bold absolute top-10 mr-8"
       >
@@ -40,12 +40,12 @@
       <div></div>
     </div>
     <div
-      class="w-full h-5/6 flex flex-col items-center bg-white rounded-lg shadow-lg overflow-y-scroll"
+      class="w-full h-5/6 flex flex-col items-center bg-white rounded-lg shadow-lg overflow-y-scroll p-4"
     >
       <div
         v-for="post in posts"
         :key="post._id"
-        class="w-full flex justify-around items-center p-3 px-10 gap-8 text-sm"
+        class="w-full flex justify-around items-center p-3 px-10 gap-8 text-sm rounded-lg transition-all duration-500 cursor-pointer"
       >
         <div>
           <span
@@ -63,17 +63,21 @@
           </span>
         </div>
         <div
+          @click="postSinglePage(post._id)"
           class="flex-1 flex items-center justify-start px-4 text-titleText font-bold"
         >
           {{ post.title }}
         </div>
         <div
+          @click="postSinglePage(post._id)"
           class="flex-1 flex items-center justify-start -mr-2 text-titleText font-bold"
         >
           {{ post.category }}
         </div>
         <div class="flex-1 text-titleText">{{ post.created }}</div>
-        <div class="flex-1 text-titleText">{{ post.content }}</div>
+        <div class="flex-1 text-titleText">
+          {{ post.content.substring(0, 50) + "..." }}
+        </div>
         <img class="flex-1 text-titleText w-24 h-24" :src="`/${post.image}`" />
         <div class="flex items-center">
           <div>
@@ -100,7 +104,7 @@ export default {
     };
   },
   beforeMount() {
-    axios.get("https://webeez.iran.liara.run/api/post").then((res) => {
+    axios.get("http://localhost:3000/api/post").then((res) => {
       this.posts = res.data;
       console.log(this.posts);
     });
@@ -114,6 +118,9 @@ export default {
       }, 2000);
       let index = this.posts.indexOf(post);
       this.posts.splice(index, 1);
+    },
+    postSinglePage(id) {
+      this.$router.push(`/mohtava/post/${id}`);
     },
   },
 };

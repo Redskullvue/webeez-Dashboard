@@ -26,8 +26,8 @@
           check_box
         </span>
       </div>
-      <div>نام</div>
-      <div>نام خانوادگی</div>
+      <div>یوزرنیم</div>
+      <div>پسوورد</div>
       <div>تاریخ ثبت نام</div>
       <div>ایمیل</div>
       <div>شماره تماس</div>
@@ -37,8 +37,8 @@
       class="w-full h-5/6 flex flex-col items-center bg-white rounded-lg shadow-lg overflow-y-scroll"
     >
       <div
-        v-for="i in 8"
-        :key="i"
+        v-for="admin in admins"
+        :key="admin.userName"
         class="w-full flex justify-around items-center p-3 px-10 gap-8 text-sm"
       >
         <div>
@@ -59,16 +59,16 @@
         <div
           class="flex-1 flex items-center justify-start px-4 text-titleText font-bold"
         >
-          محمد
+          {{ admin.userName }}
         </div>
         <div
           class="flex-1 flex items-center justify-start -mr-2 text-titleText font-bold"
         >
-          منوچهری
+          {{ admin.password }}
         </div>
         <div class="flex-1 text-titleText">10/10/1402</div>
-        <div class="flex-1 text-titleText">lorem@gmail.com</div>
-        <div class="flex-1 text-titleText font-bold">09121111111</div>
+        <div class="flex-1 text-titleText">{{ admin.email }}</div>
+        <div class="flex-1 text-titleText font-bold">{{ admin.contact }}</div>
         <div class="flex items-center">
           <div>
             <span class="material-symbols-outlined text-green"> star </span>
@@ -84,5 +84,18 @@
 <script>
 export default {
   name: "allAdmins",
+  data() {
+    return {
+      admins: [
+        {
+          userName: "admin",
+          password: "admin",
+          contact: "09101234567",
+          name: "گودرزی",
+          email: "test@gmail.com",
+        },
+      ],
+    };
+  },
 };
 </script>

@@ -61,9 +61,20 @@
             </defs>
           </svg>
         </div>
-        <y-input title="نام کاربری" placeHolder="مثال : webeezadmin" />
-        <y-input title="رمز عبور" placeHolder="رمز عبور" />
-        <button class="bg-green p-2 text-white rounded-lg shadow-md w-full">
+        <y-input
+          title="نام کاربری"
+          placeHolder="مثال : webeezadmin"
+          @getInputValue="setInputValuesUserName($event)"
+        />
+        <y-input
+          title="رمز عبور"
+          placeHolder="رمز عبور"
+          @getInputValue="setInputValuesPassword($event)"
+        />
+        <button
+          @click="login"
+          class="bg-green p-2 text-white rounded-lg shadow-md w-full"
+        >
           ورود
         </button>
       </div>
@@ -84,6 +95,30 @@ export default {
 
   components: {
     YInput,
+  },
+  data() {
+    return {
+      userName: "",
+      password: "",
+    };
+  },
+  methods: {
+    setInputValuesUserName(data) {
+      this.userName = data;
+    },
+    setInputValuesPassword(data) {
+      this.password = data;
+    },
+    login() {
+      this.$emit("LoggerCheck", true);
+      if (this.userName === "admin" && this.password === "admin") {
+        localStorage.setItem("isAuthorized", true);
+        this.$router.push("/");
+      } else {
+        this.$router.push("/login");
+        alert("اطلاعات وارد شده نادرست میباشند");
+      }
+    },
   },
 };
 </script>

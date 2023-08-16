@@ -1,5 +1,17 @@
 <template>
   <div class="w-full h-full flex items-center justify-center">
+    <div
+      v-if="isPostCreated"
+      class="w-48 h-16 bg-green text-white flex items-center justify-center rounded-tr-lg rounded-br-lg absolute top-2 left-0 animate__animated animate__lightSpeedInLeft"
+    >
+      پست با موفقیت اضافه شد
+    </div>
+    <div
+      v-if="errorPost"
+      class="w-48 h-16 bg-red text-white flex items-center justify-center rounded-tr-lg rounded-br-lg absolute top-2 left-0 animate__animated animate__lightSpeedInLeft"
+    >
+      مشکلی در اضافه کردن پست پیش آمد
+    </div>
     <form
       class="w-10/12 h-5/6 flex items-center justify-center flex-col gap-4 p-10 bg-white rounded-lg shadow-lg"
       ref="form"
@@ -32,6 +44,8 @@
         ref="test"
         type="file"
         placeholder="غکس"
+        multiple="multiple"
+        required
         class="w-1/2 bg-gray p-2 rounded-lg"
       />
       <input
@@ -56,6 +70,9 @@ export default {
         image: "",
       },
       image: "",
+
+      isPostCreated: false,
+      errorPost: false,
     };
   },
   methods: {
@@ -69,8 +86,18 @@ export default {
       formData.append("title", this.newPost.title);
       formData.append("category", this.newPost.category);
       formData.append("content", this.newPost.content);
-      await axios.post("https://webeez.iran.liara.run/api/post", formData);
-      this.$router.push("/mohtava/posts");
+      await axios
+        .post("http://localhost:3000/api/post", formData)
+        .then(() => {
+          this.isPostCreated = true;
+        })
+        .catch((err) => {
+          console.log(err);
+          this.errorPost = true;
+        });
+      setTimeout(() => {
+        this.$router.push("/mohtava/posts");
+      }, 1500);
     },
   },
 };

@@ -2,6 +2,6 @@ const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
-    proxy: "https://webeez.iran.liara.run",
+    proxy: "http://localhost:3000",
   },
 });

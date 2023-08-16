@@ -100,7 +100,7 @@ export default {
           ],
         },
         {
-          title: "محتوی",
+          title: "محتوا",
           icon: "menu_book",
           path: "/mohtava",
           subItems: [

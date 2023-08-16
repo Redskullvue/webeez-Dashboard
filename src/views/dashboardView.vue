@@ -39,15 +39,18 @@ export default {
   },
   data() {
     return {
-      isAuthed: true,
+      isAuthed: false,
       isLoading: true,
     };
   },
   mounted() {
+    if (localStorage.getItem("isAuthorized")) {
+      this.isAuthed = true;
+    }
     this.goToDashboard();
     setTimeout(() => {
       this.isLoading = false;
-    }, 5000);
+    }, 3000);
   },
   methods: {
     goToDashboard() {

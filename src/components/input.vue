@@ -8,6 +8,7 @@
     >
     <input
       id="product-name"
+      v-model="inputValue"
       class="border-2 w-full p-2 rounded-lg outline-none border-border overflow-clip focus:border-titleText text-sm transition-all duration-250"
       type="text"
       :placeholder="placeHolder"
@@ -21,6 +22,16 @@ export default {
   props: {
     title: String,
     placeHolder: String,
+  },
+  data() {
+    return {
+      inputValue: "",
+    };
+  },
+  watch: {
+    inputValue() {
+      this.$emit("getInputValue", this.inputValue);
+    },
   },
 };
 </script>
