@@ -18,6 +18,7 @@
           تایید
         </button>
         <button
+          v-if="isEditing === false"
           class="px-4 py-2 bg-green text-white rounded-lg hover:bg-hovergreen transition-all duration-300"
           @click="enableEdit"
         >
